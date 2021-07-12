@@ -3,7 +3,11 @@ const start = new Date();
 exports.time = (req, res, next) => {
     req.someData = {time: Date().toString(), startedAt: start, startedAtFormatted: start.toLocaleDateString('en-US', {
     	month: 'long',
-    	year: 'numeric'
+    	year: 'numeric',
+    	day: 'numeric',
+    	hour: '2-digit',
+    	minute: '2-digit',
+    	second: 'numeric'
     }) }
     next();
 };
