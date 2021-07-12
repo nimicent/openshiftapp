@@ -7,7 +7,9 @@ exports.time = (req, res, next) => {
     	day: 'numeric',
     	hour: '2-digit',
     	minute: '2-digit',
-    	second: 'numeric'
+    	second: 'numeric',
+    	timeZone: 'UTC', 
+    	timeZoneName: 'short'
     }) }
     next();
 };
@@ -31,5 +33,11 @@ exports.headers = (req, res) => {
 	res.json(req.someData);
 };
 
-
-
+// {
+//     "time": "Mon Jul 12 2021 14:43:16 GMT-0500 (Central Daylight Time)",
+//     "startedAt": "2021-07-12T19:43:13.848Z",
+//     "startedAtFormatted": "July 12, 2021, 07:43:13 PM UTC",
+//     "status": "200 OK. Request for status of request took: 2613 ms",
+//     "to": "London. Request for location its being sent to took: 2613 ms",
+//     "from": "Tokyo. Request for location its being sent from took: 2613 ms"
+// }
